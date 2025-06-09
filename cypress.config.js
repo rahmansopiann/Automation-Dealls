@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const environment = process.env.NODE_ENV || "DEV";
+const environment = process.env.NODE_ENV || "STG";
 
 const baseUrls = {
   DEV: process.env.DEV_URL,
