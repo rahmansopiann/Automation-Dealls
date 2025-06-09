@@ -1,12 +1,13 @@
 class LoginPage {
   elements = {
-    emailInput: () => cy.get('input[name="email"]'), // Assuming 'email' is the name attribute for the email input
-    passwordInput: () => cy.get('input[name="password"]'), // Assuming 'password' is the name attribute for the password input
-    loginButton: () => cy.get('button[type="submit"]') // Assuming submit button has type="submit"
+    emailInput: () => cy.get("#basic_email"),
+    passwordInput: () => cy.get("#basic_password"),
+    signInButton: () => cy.get("button[type='submit']"),
+    successMessage: () => cy.get(".ant-message-notice-content"),
   };
 
-  visit() {
-    cy.visit('/login'); // Assuming '/login' is the path to the login page
+  visitSignInPage() {
+    cy.visit('/sign-in');
   }
 
   fillEmail(email) {
@@ -17,13 +18,17 @@ class LoginPage {
     this.elements.passwordInput().type(password);
   }
 
-  submit() {
-    this.elements.loginButton().click();
+  clickSignInButton() {
+    this.elements.signInButton().click();
   }
 
-  // Basic verification, assumes redirection to a page that includes '/dashboard' or '/homepage' in its URL
-  verifyLoginSuccess() {
-    cy.url().should('match', /\/(dashboard|homepage)/); // Adjust regex if needed
+  verifySignInSuccess() {
+    this.elements.successMessage().should("be.visible").should("have.text", "Sign in success");
+  }
+
+  verifySignInFailure() {
+    cy.url().should("include", "/sign-in");
+    this.elements.successMessage().should("be.visible").should("contain.text", "Email Not found");
   }
 }
 

@@ -11,8 +11,8 @@ This project contains automated UI tests for the Dealls.com website, built using
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository_url>
-    cd <repository_directory>
+    git clone https://github.com/rahmansopiann/Automation-Dealls.git
+    cd Automation-Dealls
     ```
 
 2.  **Install dependencies:**
@@ -59,14 +59,15 @@ There are several ways to run Cypress tests:
     ```
 
 **Note on Credentials:**
-The tests use placeholder credentials (`testuser@example.com`, `password123`). For actual test execution against a live environment, you should replace these with valid test account credentials. It's highly recommended to use [Cypress Environment Variables](https://docs.cypress.io/guides/guides/environment-variables) to manage sensitive data like usernames and passwords. You can set them up in a `cypress.env.json` file (add this file to `.gitignore`) or via command-line arguments.
+I use `.env` to manage sensitive data like usernames, passwords and url. You can set them up in a `.env` file or via command-line arguments.
 
-Example `cypress.env.json`:
+Example `.env`:
 ```json
-{
-  "TEST_EMAIL": "your_actual_test_email@example.com",
-  "TEST_PASSWORD": "your_actual_test_password"
-}
+
+valid_email= your_actual_test_email@example.com
+valid_password= your_actual_test_password
+environments= your_environments_DEV/STG/others
+
 ```
 
 ## Folder Structure
@@ -75,49 +76,15 @@ The project follows a standard Cypress structure with the Page Object Model:
 
 -   `cypress/`
     -   `e2e/`: Contains all test files (spec files, `*.cy.js`).
-        -   `login.cy.js`: Tests related to the login functionality.
-        -   `mentoring.cy.js`: Tests related to the mentoring page functionality.
+        -   `test.cy.js`: Tests related to the functionality.
     -   `pages/`: Contains Page Object Model (POM) files. Each file represents a page or a significant component of the application and encapsulates its elements and interactions.
-        -   `LoginPage.js`: POM for the login page.
-        -   `MentoringPage.js`: POM for the mentoring page.
+        -   `Test.js`: POM for the page.
     -   `support/`: Contains custom commands and global configurations.
         -   `e2e.js`: Executed before each spec file, good for global before/after hooks or importing custom commands.
         -   `commands.js`: Used to define custom Cypress commands.
+-   `.env`: For Credentials
+-   `.gitignore`: Main Cypress configuration file (base URL, etc.).
 -   `cypress.config.js`: Main Cypress configuration file (base URL, etc.).
 -   `README.md`: This file.
 -   `package.json` (You would create this with `npm init -y` and it would list Cypress as a dev dependency).
 
-## Test Scenarios
-
-### 1. Login
-
--   **Description:** Verifies that a user can successfully log into the Dealls platform.
--   **Steps:**
-    1.  Open the login page (`/login`).
-    2.  Enter a valid email address.
-    3.  Enter a valid password.
-    4.  Click the login button.
-    5.  **Verification:** Ensure the user is redirected to their dashboard or user homepage (e.g., URL includes `/dashboard` or `/homepage`).
--   **File:** `cypress/e2e/login.cy.js`
--   **POM:** `cypress/pages/LoginPage.js`
-
-### 2. Mentoring
-
--   **Description:** Verifies that a logged-in user can access the mentoring section, view program details, and attempt to join a program.
--   **Steps:**
-    1.  Perform login (uses the login functionality).
-    2.  Navigate to the mentoring page.
-    3.  Click on one of the available mentoring programs.
-    4.  **Verification:** Ensure the detail page/section for the selected mentoring program is displayed.
-    5.  Attempt to click a "Daftar" (Register) or "Join" button if available.
-        -   **Note:** The selectors for mentoring elements are placeholders and may need adjustment based on the actual website structure. The ability to "join" might depend on program availability or other criteria.
--   **File:** `cypress/e2e/mentoring.cy.js`
--   **POMs:** `cypress/pages/LoginPage.js`, `cypress/pages/MentoringPage.js`
-
-## Screenshots (Placeholder)
-
-*(You can add screenshots here if needed, for example, of the Cypress Test Runner or key application states during tests.)*
-
----
-
-This `README.md` provides a comprehensive guide to understanding, setting up, and running the Cypress tests for Dealls.com.

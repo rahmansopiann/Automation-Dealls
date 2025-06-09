@@ -1,11 +1,29 @@
-const { defineConfig } = require('cypress');
+require("dotenv").config();
 
-module.exports = defineConfig({
+const environment = process.env.NODE_ENV || "DEV";
+
+const baseUrls = {
+  DEV: process.env.DEV_URL,
+  STG: process.env.STG_URL
+};
+
+module.exports = {
+  projectId: '1w1gub',
   e2e: {
-    baseUrl: 'https://dealls.com',
+    baseUrl: baseUrls[environment],
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    specPattern: 'cypress/e2e/**/*.cy.js'
   },
-});
+  env: {
+    ...process.env,
+  },
+  viewportWidth: 1280,
+  viewportHeight: 800,
+  defaultCommandTimeout: 30000,
+  pageLoadTimeout: 60000,
+  chromeWebSecurity: false,
+  failOnStatusCode: false
+  
+
+};
