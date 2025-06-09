@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "cy:run:dev": "cypress run --browser chrome --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
-        "cy:run:stg": "cypress run --browser chrome --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32"
+        "cy:run:stg": "cypress run --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32"
     },
     "keywords": [
         "cypress",
