@@ -83,7 +83,7 @@ The project follows a standard Cypress structure with the Page Object Model:
         -   `e2e.js`: Executed before each spec file, good for global before/after hooks or importing custom commands.
         -   `commands.js`: Used to define custom Cypress commands.
 -   `.env`: For Credentials
--   `.gitignore`: Main Cypress configuration file (base URL, etc.).
+-   `.gitignore`: gitignore folder.
 -   `cypress.config.js`: Main Cypress configuration file (base URL, etc.).
 -   `README.md`: This file.
 -   `package.json` (You would create this with `npm init -y` and it would list Cypress as a dev dependency).
