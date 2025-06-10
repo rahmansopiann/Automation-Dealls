@@ -4,8 +4,8 @@
     "description": "Cypress automation for Dealls QA Challenge",
     "main": "index.js",
     "scripts": {
-        "cy:run:dev": "cypress run --browser chrome --parallel --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
-        "cy:run:stg": "cypress run --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32"
+        "cy:run:dev": "cypress run --parallel --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
+        "cy:run:stg": "cypress run --parallel --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32"
     },
     "keywords": [
         "cypress",
