@@ -18,6 +18,7 @@ describe('Mentoring Page Functionality', () => {
     // Pre-condition Mentor should be able to mentoring program
     cy.visit('/');
     MentoringPage.navigateToMentoring();
+    cy.wait(3000);
     MentoringPage.searchMentor(searchVariable);
     cy.contains(searchVariable).click();
     MentoringPage.verifyMentoringDetailOpen(searchVariable);
