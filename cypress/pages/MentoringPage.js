@@ -27,7 +27,7 @@ class MentoringPage {
   }
 
   attemptToJoinProgram() {
-    cy.contains("Ajukan Sesi Mentoring").should('be.visible').and('be.enabled').click();
+    cy.contains("Ajukan Jadwal").should('be.visible').and('be.enabled').click();
   }
 }
 
