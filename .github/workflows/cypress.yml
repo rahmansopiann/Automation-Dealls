@@ -1,4 +1,4 @@
-name: Automation Dealls
+name: Automation Dealls.
 on:
     # Trigger when push to main branch
   push :
