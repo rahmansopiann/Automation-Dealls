@@ -4,8 +4,8 @@
     "description": "Cypress automation for Dealls QA Challenge",
     "main": "index.js",
     "scripts": {
-        "cy:run:ui:dev": "cypress run --spec 'cypress/e2e/ui/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
-        "cy:run:ui:stg": "cypress run --spec 'cypress/e2e/ui/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
+        "cy:run:ui:dev": "cypress run --spec 'cypress/e2e/**/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
+        "cy:run:ui:stg": "cypress run --spec 'cypress/e2e/**/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
         "cy:run:api:dev": "cypress run --spec 'cypress/e2e/api/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32",
         "cy:run:api:stg": "cypress run --spec 'cypress/e2e/api/*.cy.js' --record --key db036f7e-d4ab-49b3-bb35-0e3a16987a32"
     },
