@@ -4,7 +4,7 @@ import mentorList from '../support/mentorList.json';
 
 const email = Cypress.env("MANTEE_EMAIL");
 const password = Cypress.env("MANTEE_PASSWORD");
-const searchVariable = mentorList[1];
+const searchVariable = mentorList[0]; // Use the first mentor from the list
 
 Cypress.session.clearAllSavedSessions();
 
