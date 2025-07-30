@@ -1,6 +1,5 @@
-import LoginPage from '../pages/LoginPage';
-import MentoringPage from '../pages/MentoringPage';
-import mentorList from '../support/mentorList.json';
+import MentoringPage from '../../pages/MentoringPage';
+import mentorList from '../../support/mentorList.json';
 
 const email = Cypress.env("MANTEE_EMAIL");
 const password = Cypress.env("MANTEE_PASSWORD");

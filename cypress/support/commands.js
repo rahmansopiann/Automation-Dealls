@@ -22,6 +22,20 @@ Cypress.Commands.add("login", (email, password) => {
     LoginPage.verifySignInSuccess();
   });
 });
+
+Cypress.Commands.add("generateToken", () => { 
+  cy.request({
+    method: 'POST',
+    url: `${Cypress.env('API_DEV_URL')}/login/email`,
+    body: {
+      email: Cypress.env("MANTEE_EMAIL"),
+      password: Cypress.env("MANTEE_PASSWORD")
+    }
+  }).then((response) => {
+    expect(response.status).to.eq(200);
+    return response.body.data.tokenData;
+  });
+});
 //
 //
 // -- This is a child command --

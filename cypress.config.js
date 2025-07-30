@@ -20,10 +20,12 @@ module.exports = {
   },
   viewportWidth: 1280,
   viewportHeight: 800,
+    retries: {
+    runMode: 2,
+    openMode: 0,
+  },
   defaultCommandTimeout: 30000,
   pageLoadTimeout: 60000,
   chromeWebSecurity: false,
   failOnStatusCode: false
-  
-
 };
